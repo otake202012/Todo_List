@@ -1,0 +1,13 @@
+<div class ="form_group">
+    <%= form_for(@task) do |f| %>
+    <%= f.label 'limit' %>
+    <%= f.date_field :limit %><br>
+    
+    <%= f.label 'task' %>
+    <%= f.text_field :task %><br>
+    
+    <%= f.label 'state' %>
+    <%= f.select :state, [["Todo", "Todo"], ["Doing", "Doing"],["Done", "Done"]], include_blank: "選択して下さい" %><br>
+    <%= f.submit %>
+</div>
+<% end %>

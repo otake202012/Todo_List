@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  State: MyText
+  Limit: 2021-01-23
+  Task: MyText
+
+two:
+  State: MyText
+  Limit: 2021-01-23
+  Task: MyText
