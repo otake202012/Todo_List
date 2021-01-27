@@ -15,7 +15,7 @@
           <td><%= t.state %></td>
           <td><%= t.task %></td>
           <td><%= t.limit %></td>
-          <td><%= link_to "編集", edit_task_path(t), class:"btn btn-success" %><%= link_to "削除", task_path(t), method: :delete, data:{ confirm: 'Are you sure?' }, class:"btn btn-danger"%></td>
+          <td><%= link_to "編集", edit_task_path(t), class:"btn btn-success" %><%= link_to "削除", task_path(t), method: :delete, data:{ confirm: '本当に削除しますか?' }, class:"btn btn-danger"%></td>
         </tr>
         <% end %>
       </table>

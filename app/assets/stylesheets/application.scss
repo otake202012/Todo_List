@@ -15,3 +15,15 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+header.navbar{
+  height:70px;
+}
+
+body{
+  padding:50px;
+}
+
+#logo{
+  font-color:white;
+}
