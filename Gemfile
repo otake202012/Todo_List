@@ -25,10 +25,20 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Capistrano for deployment
+# Use Capistrano for deployment 
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'jquery-rails'
+gem 'bcrypt',         '3.1.13'
+
+
+group :test do
+  gem 'rails-controller-testing', '1.0.2'
+  gem 'minitest-reporters',       '1.1.14'
+  gem 'guard',                    '2.13.0'
+  gem 'guard-minitest',           '2.4.4'
+  gem 'minitest', '~> 5.10.1' # 最新の5.11.1だとrailtiesと相性が悪い
+end
 
 group :development, :test do
    # Use sqlite3 as the database for Active Record
