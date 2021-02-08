@@ -5,7 +5,7 @@ class TasksController < ApplicationController
     end
 
     def index
-        @tasks = Task.all
+      @tasks = Task.all
     end
 
     def show
@@ -13,9 +13,15 @@ class TasksController < ApplicationController
     end
 
     def create
-        task = Task.new(task_params)
-        task.save
+      @task = Task.new(task_params)
+      @task.user_id = current_user.id
+      if @task.save
+        flash[:success] = "Create a new task"
         redirect_to '/tasks'
+      else
+        flash.now[:denger] = "Failed to edit"
+        render 'new'
+      end
     end
 
     def edit
@@ -23,11 +29,11 @@ class TasksController < ApplicationController
     end
     
     def update
-      @user = User.find(params[:id])
-      if @user.save
+      @task = Task.find(params[:id])
+      if @task.save
         redirect_to 'show'
       else
-        render 'show'
+        render 'index'
       end
     end
 

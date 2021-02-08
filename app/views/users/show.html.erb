@@ -1,5 +1,31 @@
-<%= flash[:success] %>
+<h1>Show page</h1>
 
+<div class="content">
+  <div>名前：　　　　　<%= @user.name %></div>
+  <div>メールアドレス：<%= @user.email %></div>
+  <%= link_to "My Todolist", tasks_path %>
+  
+  <% provide(:title,"一覧") %>
 
-
-
+<div class="container">
+  <h1>Tasks</h1>
+    <div class="row">
+      <table class="table table-bordered">
+        <tr>
+          <th>state</th>
+          <th>task</th>
+          <th>limit</th>
+          <th></th>
+        </tr>
+        <% @tasks.each do |t| %>
+        <tr>
+          <td><%= t.state %></td>
+          <td><%= t.task %></td>
+          <td><%= t.limit %></td>
+          <td><%= link_to "編集", edit_task_path(t), class:"btn btn-success" %><%= link_to "削除", task_path(t), method: :delete, data:{ confirm: '本当に削除しますか?' }, class:"btn btn-danger"%></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+<%= link_to "新規", new_task_path, class: "btn btn-primary" %>
+</div>
