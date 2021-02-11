@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0'
+gem 'rails', '~> 5.2.4'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -25,7 +24,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Capistrano for deployment 
+# Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'jquery-rails'
@@ -41,11 +40,10 @@ group :test do
 end
 
 group :development, :test do
-   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.3.0'
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  gem 'byebug',  '11.0.1', platforms: [:mri, :mingw, :x64_mingw]
 end
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
@@ -57,11 +55,6 @@ group :development do
   gem 'rubocop', '~> 0.55.0', require: false
 end
 
-  group :production do
-    # gem 'pg','1.1.4'
-    gem 'pg', '0.21.0'
-
-  end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+group :production do
+  gem 'pg', '1.1.4'
+end
