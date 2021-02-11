@@ -1,14 +1,12 @@
+<% provide(:title,"一覧") %>
 <h1>Show page</h1>
 
 <div class="content">
   <div>名前：　　　　　<%= @user.name %></div>
   <div>メールアドレス：<%= @user.email %></div>
-  <%= link_to "My Todolist", tasks_path %>
-  
-  <% provide(:title,"一覧") %>
 
 <div class="container">
-  <h1>Tasks</h1>
+  <h3>Tasks</h3>
     <div class="row">
       <table class="table table-bordered">
         <tr>
