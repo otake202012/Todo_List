@@ -17,7 +17,7 @@ class TasksController < ApplicationController
       @task.user_id = current_user.id
       if @task.save
         flash[:success] = "Create a new task"
-        redirect_to '/tasks'
+        redirect_to user_url(current_user)
       else
         flash.now[:denger] = "Failed to edit"
         render 'new'
