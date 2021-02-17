@@ -32,7 +32,7 @@ class TasksController < ApplicationController
       @task = Task.find(params[:id])
       if @task.update(task_params)
         flash[:success] = "Task updated."
-        redirect_to user_path
+        redirect_to user_url(@task.user_id)
       else
         flash[:danger] = "Failed to update task."
         render 'edit'
