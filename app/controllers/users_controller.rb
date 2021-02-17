@@ -11,7 +11,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Profile updated"
+      log_in @user
+      flash[:success] = "Welcome to YourTodolist!!"
       redirect_to @user
     else
       render 'new'

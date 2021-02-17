@@ -19,7 +19,7 @@ class TasksController < ApplicationController
         flash[:success] = "Create a new task"
         redirect_to user_url(current_user)
       else
-        flash.now[:denger] = "Failed to edit"
+        flash.now[:denger] = "Failed to cerate task."
         render 'new'
       end
     end
@@ -30,10 +30,12 @@ class TasksController < ApplicationController
     
     def update
       @task = Task.find(params[:id])
-      if @task.save
-        redirect_to 'show'
+      if @task.update(task_params)
+        flash[:success] = "Task updated."
+        redirect_to user_path
       else
-        render 'index'
+        flash[:danger] = "Failed to update task."
+        render 'edit'
       end
     end
 
