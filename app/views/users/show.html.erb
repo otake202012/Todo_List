@@ -1,10 +1,12 @@
-<% provide(:title,"一覧") %>
-<h1>Show page</h1>
+<% provide(:title,"My Todolist") %>
+<h1>My Todolist</h1>
 
-<div class="content">
+<div class="container">
+  <h3>Account</h3>
   <div>name ：<%= @user.name %></div>
   <div>email：<%= @user.email %></div>
   <%= link_to "Edit my account", edit_user_path %>
+</div>
 
 
 <div class="container">
